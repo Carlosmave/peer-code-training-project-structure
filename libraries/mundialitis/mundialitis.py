@@ -46,7 +46,7 @@ class Mundialitis():
         """
         Creates a new lobby for the trivia page.
         """
-        new_lobby = "RPATRAININGLOBBY282"
+        new_lobby = "RPATRAININGLOBBY2828"
         act_on_element('//a[@href="/trivialobbies"]', "click_element")
         act_on_element('//button[text()="CREAR LOBBY"]', "click_element")
         self.browser.input_text_when_element_is_visible('//input[@id="lobbyname"]', new_lobby)
@@ -59,7 +59,7 @@ class Mundialitis():
         """
         Function that registers a new user.
         """
-        new_user = "RPATRAINING282"
+        new_user = "RPATRAINING2828"
         self.browser.go_to(self.mundialitis_url)
         self.browser.input_text_when_element_is_visible('//input[@id="rusername"]', new_user)
         self.browser.input_text_when_element_is_visible('//input[@id="rpassword"]', new_user)

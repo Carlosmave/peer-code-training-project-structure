@@ -15,6 +15,8 @@ class Google():
         Access Google from the browser.
         """
         self.browser.go_to(self.google_url)
+        capture_page_screenshot(OUTPUT_FOLDER, "ACCESS_TO_GOOGLE_BEGAN")
+        print(self.browser.get_source())
         try:
             # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
             # frame = act_on_element('tag:iframe', "find_element")

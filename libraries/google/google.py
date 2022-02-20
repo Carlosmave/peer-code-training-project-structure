@@ -16,7 +16,7 @@ class Google():
         """
         self.browser.go_to(self.google_url)
         try:
-            frame = act_on_element('//iframe', "find_elements")
+            frame = act_on_element('//*[@id="cnsw"]/iframe', "find_elements", 10)
             print("IFRAME FOUND")
             self.browser.switch_to.frame(frame[0])
             act_on_element('//*[@id="introAgreeButton"]', "click_element")
@@ -24,6 +24,7 @@ class Google():
             print(e)
             pass
         self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Google"]])
+        capture_page_screenshot(OUTPUT_FOLDER, "ACCESS_TO_GOOGLE_FINISHED")
 
     def search_movie(self):
         log_message("Start - Search Movie")

@@ -16,14 +16,20 @@ class Google():
         """
         self.browser.go_to(self.google_url)
         try:
-            # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_elements", 10)
-            # print("IFRAME FOUND")
+            # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
+            frame = act_on_element('tag:iframe', "find_element")
+            print("IFRAME FOUND")
             # self.browser.switch_to.frame(frame[0])
-            act_on_element('//*[@id="introAgreeButton"]', "click_element", 10)
+            self.browser.select_frame(frame)
+            try:
+                act_on_element('//*[@id="introAgreeButton"]', "click_element")
+            except Exception as e:
+                self.browser.unselect_frame()
+                raise Exception(str(e))
         except Exception as e:
             print(e)
             pass
-        self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Google"]])
+        # self.browser.switch_window(locator = self.browser.get_window_handles()[tabs_dict["Google"]])
         capture_page_screenshot(OUTPUT_FOLDER, "ACCESS_TO_GOOGLE_FINISHED")
 
     def search_movie(self):

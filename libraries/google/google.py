@@ -25,14 +25,14 @@ class Google():
 
             # frames = act_on_element('//iframe', "find_elements")
             # print("IFRAME FOUND")
-            # # self.browser.switch_to.frame(frame[0])
+            # self.browser.switch_to.frame(frame[0])
             # print(frames)
-            # self.browser.select_frame(frames[0])
+            self.browser.select_frame(0)
             try:
                 # act_on_element('//*[@id="introAgreeButton"]', "click_element")
-                act_on_element('//button[text()="I agree"]', "click_element")
+                act_on_element('//button[text()="I agree"]', "click_element", 5)
             except Exception as e:
-                # self.browser.unselect_frame()
+                self.browser.unselect_frame()
                 raise Exception(str(e))
         except Exception as e:
             print(e)

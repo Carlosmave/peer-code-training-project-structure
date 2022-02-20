@@ -17,10 +17,13 @@ class Google():
         self.browser.go_to(self.google_url)
         try:
             # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
-            frame = act_on_element('tag:iframe', "find_element")
+            # frame = act_on_element('tag:iframe', "find_element")
+            # print(dir(self.browser))
+            frames = act_on_element('//iframe', "find_elements")
             print("IFRAME FOUND")
             # self.browser.switch_to.frame(frame[0])
-            self.browser.select_frame(frame)
+            print(frames)
+            self.browser.select_frame(frames[0])
             try:
                 act_on_element('//*[@id="introAgreeButton"]', "click_element")
             except Exception as e:

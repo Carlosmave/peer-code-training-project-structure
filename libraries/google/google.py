@@ -16,7 +16,8 @@ class Google():
         """
         self.browser.go_to(self.google_url)
         try:
-            frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element")
+            frame = act_on_element('//iframe[contains(@src, "consent.google.com")]', "find_element")
+            print("IFRAME FOUND")
             self.browser.switch_to.frame(frame)
             act_on_element('//*[@id="introAgreeButton"]', "click_element")
         except Exception as e:

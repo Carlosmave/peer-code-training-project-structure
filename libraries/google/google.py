@@ -16,20 +16,23 @@ class Google():
         """
         self.browser.go_to(self.google_url)
         capture_page_screenshot(OUTPUT_FOLDER, "ACCESS_TO_GOOGLE_BEGAN")
-        print(self.browser.get_source())
+        # print(self.browser.get_source())
         try:
             # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
             # frame = act_on_element('tag:iframe', "find_element")
             # print(dir(self.browser))
-            frames = act_on_element('//iframe', "find_elements")
-            print("IFRAME FOUND")
-            # self.browser.switch_to.frame(frame[0])
-            print(frames)
-            self.browser.select_frame(frames[0])
+
+
+            # frames = act_on_element('//iframe', "find_elements")
+            # print("IFRAME FOUND")
+            # # self.browser.switch_to.frame(frame[0])
+            # print(frames)
+            # self.browser.select_frame(frames[0])
             try:
-                act_on_element('//*[@id="introAgreeButton"]', "click_element")
+                # act_on_element('//*[@id="introAgreeButton"]', "click_element")
+                act_on_element('//button[text()="I agree"]', "click_element")
             except Exception as e:
-                self.browser.unselect_frame()
+                # self.browser.unselect_frame()
                 raise Exception(str(e))
         except Exception as e:
             print(e)

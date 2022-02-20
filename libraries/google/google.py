@@ -23,11 +23,11 @@ class Google():
             # print(dir(self.browser))
 
 
-            # frames = act_on_element('//iframe', "find_elements")
-            # print("IFRAME FOUND")
+            frames = act_on_element('//iframe', "find_elements")
+            print("IFRAME FOUND")
             # self.browser.switch_to.frame(frame[0])
-            # print(frames)
-            self.browser.select_frame(0)
+            print("FRAMES:", frames)
+            self.browser.select_frame(frames[0])
             try:
                 # act_on_element('//*[@id="introAgreeButton"]', "click_element")
                 act_on_element('//button[text()="I agree"]', "click_element", 5)

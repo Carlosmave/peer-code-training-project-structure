@@ -12,8 +12,8 @@ class Process:
     def __init__(self, credentials: dict):
         log_message("Initialization")
         prefs = {
-            "profile.default_content_setting_values.notifications": 2,
-            "profile.default_content_settings.popups": 0,
+            # "profile.default_content_setting_values.notifications": 2,
+            # "profile.default_content_settings.popups": 0,
             "directory_upgrade": True,
             "download.default_directory": OUTPUT_FOLDER,
             "plugins.always_open_pdf_externally": True,

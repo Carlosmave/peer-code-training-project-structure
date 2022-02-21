@@ -28,10 +28,11 @@ class Google():
 
 
             capture_page_screenshot(OUTPUT_FOLDER, "1")
-            # dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
-            # act_on_element(dropdown, "click_element")
+            dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
+            act_on_element(dropdown, "click_element")
 
             capture_page_screenshot(OUTPUT_FOLDER, "2")
+            print(self.browser.get_source())
 
             # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
             agree_button = act_on_element('//button[text()="I agree"]', "find_element")

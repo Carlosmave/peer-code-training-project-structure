@@ -16,6 +16,9 @@ class Google():
         """
         self.browser.go_to(self.google_url)
         capture_page_screenshot(OUTPUT_FOLDER, "ACCESS_TO_GOOGLE_BEGAN")
+        print("ABOUT TO RELOAD")
+        self.browser.reload_page()
+        print("RELOADED")
         # print(self.browser.get_source())
         try:
             # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
@@ -42,9 +45,9 @@ class Google():
 
     def search_movie(self):
         log_message("Start - Search Movie")
-        self.browser.go_to("https://www.google.com/search?q=spiderman%20itunes%20movie%20us")
-        # self.browser.input_text_when_element_is_visible('//input[@title="Search"]', "Spider-Man")
-        # act_on_element('//div[@class="CqAVzb lJ9FBc"]//input[@value="Google Search"]', "click_element")
+        # self.browser.go_to("https://www.google.com/search?q=spiderman%20itunes%20movie%20us")
+        self.browser.input_text_when_element_is_visible('//input[@title="Search"]', "Spider-Man")
+        act_on_element('//div[@class="CqAVzb lJ9FBc"]//input[@value="Google Search"]', "click_element")
         time.sleep(5)
         capture_page_screenshot(OUTPUT_FOLDER, "SEARCH_MOVIE_FINISHED")
         log_message("End - Search Movie")

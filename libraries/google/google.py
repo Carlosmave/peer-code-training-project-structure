@@ -32,7 +32,11 @@ class Google():
             act_on_element(dropdown, "click_element")
 
             capture_page_screenshot(OUTPUT_FOLDER, "2")
-            print(self.browser.get_source())
+            # print(self.browser.get_source())
+
+            on_elements = act_on_element('//button[descendant::span[text()="On"]]', "find_elements")
+            for on_element in on_elements:
+                act_on_element(on_element, "click_element")
 
             # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
             # agree_button = act_on_element('//button[text()="I agree"]', "find_element")
@@ -41,6 +45,16 @@ class Google():
             act_on_element(agree_button, "click_element")
 
             capture_page_screenshot(OUTPUT_FOLDER, "3")
+
+
+
+
+            # <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" jsname="vaX9ac" data-disable-idom="true" aria-label="Turn on Search customization">
+            # <div class="VfPpkd-Jh9lGc"></div>
+            # <div class="VfPpkd-J1Ukfc-LhBDec"></div>
+            # <div class="VfPpkd-RLmnJb"></div>
+            # <span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span>
+            # </button>
 
 
 

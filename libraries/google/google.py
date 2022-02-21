@@ -30,10 +30,11 @@ class Google():
             capture_page_screenshot(OUTPUT_FOLDER, "1")
             # print(self.browser.get_source())
 
-            # dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
-            # act_on_element(dropdown, "click_element")
+            print(self.browser.get_source())
+            dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
+            act_on_element(dropdown, "click_element")
 
-            act_on_element('//button[child::div[text()="I agree"]]', "click_element")
+            # act_on_element('//button[child::div[text()="I agree"]]', "click_element")
             # <button id="L2AGLb" class="tHlp8d" data-ved="0ahUKEwjkso6w54_2AhUiolwKHVyDC-oQiZAHCB8"><div class="QS5gu sy4vM" role="none">I agree</div></button>
             #########################################
             capture_page_screenshot(OUTPUT_FOLDER, "2")

@@ -28,28 +28,42 @@ class Google():
 
 
             capture_page_screenshot(OUTPUT_FOLDER, "1")
-            print(self.browser.get_source())
-            dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
-            act_on_element(dropdown, "click_element")
+            # print(self.browser.get_source())
 
+            # dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
+            # act_on_element(dropdown, "click_element")
+
+            act_on_element('//button[child::div[text()="I agree"]]', "click_element")
+            # <button id="L2AGLb" class="tHlp8d" data-ved="0ahUKEwjkso6w54_2AhUiolwKHVyDC-oQiZAHCB8"><div class="QS5gu sy4vM" role="none">I agree</div></button>
+            #########################################
             capture_page_screenshot(OUTPUT_FOLDER, "2")
             # print(self.browser.get_source())
 
-            on_elements = act_on_element('//button[descendant::span[text()="On"]]', "find_elements")
-            on_elements = on_elements[:3]
-            for index, on_element in enumerate(on_elements):
-                act_on_element(on_element, "click_element")
-                capture_page_screenshot(OUTPUT_FOLDER, "option_{}".format(index))
-
-            # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
-            # agree_button = act_on_element('//button[text()="I agree"]', "find_element")
-            agree_button = act_on_element('//button[descendant::span[text()="Confirm"]]', "find_element")
-
-            act_on_element(agree_button, "click_element")
-
-            capture_page_screenshot(OUTPUT_FOLDER, "3")
-
-
+            # on_elements = act_on_element('//button[descendant::span[text()="On"]]', "find_elements")
+            # on_elements = on_elements[:3]
+            # for index, on_element in enumerate(on_elements):
+            #     act_on_element(on_element, "click_element")
+            #     capture_page_screenshot(OUTPUT_FOLDER, "option_{}".format(index))
+            #
+            #     <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf"
+            #     jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+            #     jsname="vaX9ac" data-disable-idom="true" aria-label="Turn on Search customization"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span></button>
+            #
+            #     <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf"
+            #     jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+            #     jsname="lW531d" data-disable-idom="true" aria-label="Turn on YouTube History"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span></button>
+            #
+            #     <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf"
+            #     jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+            #     jsname="Vosabd" data-disable-idom="true" aria-label="Turn on Ad personalization"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span></button>
+            #
+            #     <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf"
+            #     jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+            #     jsname="htcGTd" data-disable-idom="true" aria-label="Turn on Ad personalization on Google Search"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span></button>
+            #
+            #     <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf"
+            #     jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+            #     jsname="SaawBb" data-disable-idom="true" aria-label="Turn on Ad personalization on YouTube &amp; across the web"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span></button>
 
 
             # <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe P62QJc S82sre" jscontroller="soHxf" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" jsname="vaX9ac" data-disable-idom="true" aria-label="Turn on Search customization">
@@ -58,6 +72,33 @@ class Google():
             # <div class="VfPpkd-RLmnJb"></div>
             # <span jsname="V67aGc" class="VfPpkd-vQzf8d" aria-hidden="true">On</span>
             # </button>
+
+
+            act_on_element('//button[@aria-label="Turn on Search customization"]', "click_element")
+            act_on_element('//button[@aria-label="Turn on YouTube History"]', "click_element")
+            act_on_element('//button[@aria-label="Turn on Ad personalization"]', "click_element")
+            ##########################################################################################################
+            # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
+            # agree_button = act_on_element('//button[text()="I agree"]', "find_element")
+            agree_button = act_on_element('//button[child::span[text()="Confirm"]]', "find_element")
+
+            act_on_element(agree_button, "click_element")
+
+            # <button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc XICXwf" jscontroller="soHxf" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" jsname="j6LnYe" data-disable-idom="true">
+            # <div class="VfPpkd-Jh9lGc"></div>
+            # <div class="VfPpkd-J1Ukfc-LhBDec"></div>
+            # <div class="VfPpkd-RLmnJb"></div>
+            # <span jsname="V67aGc" class="VfPpkd-vQzf8d">Confirm</span>
+            # </button>
+
+            capture_page_screenshot(OUTPUT_FOLDER, "3")
+
+
+
+
+
+
+
 
 
 

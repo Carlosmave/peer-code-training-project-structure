@@ -17,8 +17,13 @@ class Google():
         self.browser.go_to(self.google_url)
         # print(self.browser.get_source())
         try:
-            act_on_element('//button[child::div[text()="I agree"]]', "click_element", 2)
-        except:
+            act_on_element('//button[child::div[text()="Customise"]]', "click_element", 2)
+            act_on_element('//button[@aria-label="Turn on Search customization"]', "click_element")
+            act_on_element('//button[@aria-label="Turn on YouTube History"]', "click_element")
+            act_on_element('//button[@aria-label="Turn on Ad personalization"]', "click_element")
+            act_on_element('//button[child::span[text()="Confirm"]]', "click_element")
+            # act_on_element('//button[child::div[text()="I agree"]]', "click_element", 2)
+        except Exception as e:
             pass
 
     def search_movie(self):

@@ -25,8 +25,18 @@ class Google():
             # frame = act_on_element('tag:iframe', "find_element")
             # print(dir(self.browser))
             # self.browser.find_element_by_class_name('tHlp8d').click()
+            capture_page_screenshot(OUTPUT_FOLDER, "1")
             dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
             act_on_element(dropdown, "click_element")
+
+            capture_page_screenshot(OUTPUT_FOLDER, "2")
+
+            agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
+            act_on_element(agree_button, "click_element")
+
+            capture_page_screenshot(OUTPUT_FOLDER, "3")
+
+             # driver.find_element_by_id('L2AGLb').click()
 
 
             frames = act_on_element('//iframe', "find_elements")

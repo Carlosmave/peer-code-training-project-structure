@@ -28,6 +28,7 @@ class Google():
 
 
             capture_page_screenshot(OUTPUT_FOLDER, "1")
+            print(self.browser.get_source())
             dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
             act_on_element(dropdown, "click_element")
 

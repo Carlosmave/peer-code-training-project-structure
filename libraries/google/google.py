@@ -33,13 +33,14 @@ class Google():
 
             capture_page_screenshot(OUTPUT_FOLDER, "2")
 
-            agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
+            # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
+            agree_button = act_on_element('//button[text()="I agree"]', "find_element")
             act_on_element(agree_button, "click_element")
 
             capture_page_screenshot(OUTPUT_FOLDER, "3")
 
 
-            
+
 
              # driver.find_element_by_id('L2AGLb').click()
 

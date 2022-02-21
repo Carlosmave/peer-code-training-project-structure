@@ -35,7 +35,7 @@ class Google():
             # print(self.browser.get_source())
 
             on_elements = act_on_element('//button[descendant::span[text()="On"]]', "find_elements")
-            for idex, on_element in enumerate(on_elements):
+            for index, on_element in enumerate(on_elements):
                 act_on_element(on_element, "click_element")
                 capture_page_screenshot(OUTPUT_FOLDER, "option_{}".format(index))
 

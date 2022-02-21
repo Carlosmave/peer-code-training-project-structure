@@ -24,6 +24,9 @@ class Google():
             # frame = act_on_element('//*[@id="cnsw"]/iframe', "find_element", 10)
             # frame = act_on_element('tag:iframe', "find_element")
             # print(dir(self.browser))
+            # self.browser.find_element_by_class_name('tHlp8d').click()
+            dropdown = act_on_element('//*[@class="tHlp8d"]', "find_element")
+            act_on_element(dropdown, "click_element")
 
 
             frames = act_on_element('//iframe', "find_elements")

@@ -35,7 +35,9 @@ class Google():
             print(self.browser.get_source())
 
             # agree_button = act_on_element('//*[@class="L2AGLb"]', "find_element")
-            agree_button = act_on_element('//button[text()="I agree"]', "find_element")
+            # agree_button = act_on_element('//button[text()="I agree"]', "find_element")
+            agree_button = act_on_element('//button[descendant::span[text()="Confirm"]]', "find_element")
+
             act_on_element(agree_button, "click_element")
 
             capture_page_screenshot(OUTPUT_FOLDER, "3")

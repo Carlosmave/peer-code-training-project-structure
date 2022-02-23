@@ -2,6 +2,7 @@ from libraries.common import act_on_element, capture_page_screenshot, log_messag
 from config import OUTPUT_FOLDER, tabs_dict
 import random
 import time
+from selenium.webdriver.common.keys import Keys
 
 class Google():
 
@@ -14,18 +15,19 @@ class Google():
         """
         Access Google from the browser.
         """
+        log_message("Start - Access Google")
         self.browser.go_to(self.google_url)
-        # print(self.browser.get_source())
-        try:
-            act_on_element('//button[child::div[text()="I agree"]]', "click_element", 2)
-        except:
-            pass
+        log_message("End - Access Google")
+
 
     def search_movie(self):
+        """
+        Searches for the lord of the rings the return of the king.
+        """
         log_message("Start - Search Movie")
-        # self.browser.go_to("https://www.google.com/search?q=spiderman%20itunes%20movie%20us")
-        self.browser.input_text_when_element_is_visible('//input[@title="Search"]', "Spider-Man")
-        act_on_element('//div[@class="CqAVzb lJ9FBc"]//input[@value="Google Search"]', "click_element")
-        time.sleep(5)
-        capture_page_screenshot(OUTPUT_FOLDER, "SEARCH_MOVIE_FINISHED")
+        search_bar = act_on_element('//input[@title="Search"]', "find_element")
+        self.browser.input_text_when_element_is_visible('//input[@title="Search"]', "the lord of the rings the return of the king itunes movie us")
+        search_bar.send_keys(Keys.ENTER)
+        matched_link = act_on_element('//a[contains(@href, "itunes.apple.com") and not(contains(@href, "translate"))]', "find_elements")[0].get_attribute("href")
         log_message("End - Search Movie")
+        return matched_link

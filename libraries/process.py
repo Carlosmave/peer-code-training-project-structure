@@ -3,6 +3,7 @@ from libraries.mundialitis.mundialitis import Mundialitis
 from libraries.google.google import Google
 from libraries.onpe.onpe import ONPE
 from libraries.infogob.infogob import Infogob
+from libraries.itunes.itunes import Itunes
 from config import OUTPUT_FOLDER, tabs_dict
 import time
 
@@ -30,7 +31,7 @@ class Process:
         # infogob.read_sample_excel()
 
         google = Google(browser, {"url": "https://www.google.com/ncr"})
-        tabs_dict["Google"] = len(tabs_dict)
+        # tabs_dict["Google"] = len(tabs_dict)
         google.access_google()
         self.google = google
         # browser.execute_javascript("window.open()")
@@ -59,7 +60,13 @@ class Process:
     def start(self):
         # pass
         # self.onpe.download_files()
-        self.google.search_movie()
+        matched_link = self.google.search_movie()
+        itunes = Itunes(browser, {"url": matched_link})
+        self.itunes = itunes
+        self.itunes.access_itunes()
+        tabs_dict["Itunes"] = len(tabs_dict)
+        self.itunes.extract_artists_information()
+        self.itunes.create_report()
         # log_message("Start - Create Lobby")
         # self.mundialitis.create_lobby()
         # log_message("End - Create Lobby")

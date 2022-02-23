@@ -17,6 +17,7 @@ class Google():
         """
         log_message("Start - Access Google")
         self.browser.go_to(self.google_url)
+        print(self.browser.get_source())
         log_message("End - Access Google")
 
 

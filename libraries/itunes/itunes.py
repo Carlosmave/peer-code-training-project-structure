@@ -24,7 +24,7 @@ class Itunes():
         Extracts the movie information for each artist on Itunes.
         """
         log_message("Start - Extract Artists Information")
-        artist_elements = act_on_element('//dd[@class="cast-list__detail"]/a', "find_elements")
+        artist_elements = act_on_element('//dd[@class="cast-list__detail"]/a', "find_elements")[:5]
         self.browser.execute_javascript("window.open()")
         self.browser.switch_window(locator = "NEW")
         tabs_dict["Artist Page"] = len(tabs_dict)

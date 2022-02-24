@@ -17,7 +17,7 @@ class Google():
         """
         log_message("Start - Access Google")
         self.browser.go_to(self.google_url)
-        print(self.browser.get_source())
+        # print(self.browser.get_source())
         # <button id="L2AGLb" class="tHlp8d" data-ved="0ahUKEwjJsMuTgZf2AhUGIMAKHUFvCjAQiZAHCB8"><div class="QS5gu sy4vM" role="none">I agree</div></button>
         try:
             act_on_element('//button[child::div[text()="I agree"]]', "click_element", 2)

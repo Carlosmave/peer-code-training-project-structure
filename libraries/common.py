@@ -7,10 +7,12 @@ from ta_bitwarden_cli.ta_bitwarden_cli import Bitwarden
 from config import OUTPUT_FOLDER
 from RPA.FileSystem import FileSystem
 from RPA.Excel.Files import Files
+from RPA.PDF import PDF
 
 browser = Selenium()
 file_system = FileSystem()
 files = Files()
+pdf = PDF()
 
 
 def log_message(message: str, level: str = 'INFO', console: bool = True):

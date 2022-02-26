@@ -9,6 +9,7 @@ class Itunes():
         self.browser = rpa_selenium_instance
         self.itunes_url = credentials["url"]
         self.artists_data_dict_list = []
+        print(dir(self.browser))
 
 
     def access_itunes(self):
@@ -24,7 +25,7 @@ class Itunes():
         Extracts the movie information for each artist on Itunes.
         """
         log_message("Start - Extract Artists Information")
-        artist_elements = act_on_element('//dd[@class="cast-list__detail"]/a', "find_elements")[:5]
+        artist_elements = act_on_element('//dd[@class="cast-list__detail"]/a', "find_elements")
         self.browser.execute_javascript("window.open()")
         self.browser.switch_window(locator = "NEW")
         tabs_dict["Artist Page"] = len(tabs_dict)
